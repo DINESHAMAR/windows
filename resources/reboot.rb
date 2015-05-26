@@ -19,11 +19,7 @@
 #
 
 actions :request, :cancel
+default_action :request
 
 attribute :timeout, :kind_of => Integer, :name_attribute => true
-attribute :reason, :kind_of => String, :default => ''
-
-def initialize(name,run_context=nil)
-  super
-  @action = :request
-end
+attribute :reason, :kind_of => String, :default => 'Chef Software Chef initiated reboot'
